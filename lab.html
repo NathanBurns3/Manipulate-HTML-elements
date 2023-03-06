@@ -1,0 +1,35 @@
+<div class="output">
+    <h1>Hello</h1>
+    <div>Test</div>
+    <ul>
+        <li id="one">One</li>
+        <li class="red">Two</li>
+    </ul>
+    <div>Test</div>
+</div>
+
+<script>
+    document.getElementsByClassName("output");
+
+    let mainList = document.getElementsByTagName("ul");
+
+    for (let i = 0; i < mainList.length; i++) {
+        mainList[i].setAttribute('id', 'mainList');
+    }
+
+    let TagName = document.getElementsByTagName("div");
+    let TagNames = Array.from(TagName).map(div => div.tagName);
+    console.log(TagNames);
+
+    for (let i = 0; i < TagName.length; i++) {
+        let div = TagName[i];
+        div.setAttribute('id', `id${i}`);
+        if (i % 2 === 0) {
+            div.style.color = 'green';
+        }
+        else {
+            div.style.color = 'red';
+        }
+    }
+
+</script>
